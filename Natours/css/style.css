@@ -1,0 +1,39 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adicionamos a fonte dentro do body devido ao fato de ele ser 
+    o elemento pai de todos os elementos sendo herdados por todos seus
+    elementos filhos.  */
+body { 
+    font-family: "Lato", sans-serif; 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header { 
+    /* vh significa ViewPort, ou seja ela vai ocupar 95% da ViewPort */
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(126, 213, 111, 0.8),
+        rgba(40, 180, 131, 0.8)),
+          url("./../img/hero.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(x y, x y, x y);
+}
