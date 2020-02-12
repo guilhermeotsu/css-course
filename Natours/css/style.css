@@ -51,6 +51,14 @@ a partir do elemento pai de posição relativa */
     height: 35px;
 }
 
+.text-box { 
+    position: absolute;
+    /* a % é em relação ao elemto pai */
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
 /* o elemento h1 é o cabeçalho da página pela qual o SEO sabe o 
 que nossa página da web é */
 .heading-primary { 
@@ -63,11 +71,40 @@ que nossa página da web é */
     font-size: 60px;
     font-weight: 400; /* largura do texto */
     letter-spacing: 35px;
+
+    /* adicionando animações que foram criadas */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+
+    /* 
+    animation-delay: 3s -> após 3s a animação é executada
+    animation-iteration-count: 3; -> a animação é executada 3 vezes
+    */ 
 }
 
 .heading-primary-sub {
     display: block;
     font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 15px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+
+/* animações */
+@keyframes moveInLeft { 
+    /* inicio */
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    /* final */
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
