@@ -64,6 +64,9 @@ que nossa página da web é */
 .heading-primary { 
     color: #ffffff;
     text-transform: uppercase;
+
+    /* Faz com que as animações (keyframes) não dê uma "tremida" */
+    backface-visibility: hidden;
 }
 
 .heading-primary-main { 
@@ -75,7 +78,7 @@ que nossa página da web é */
     /* adicionando animações que foram criadas */
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
 
     /* 
     animation-delay: 3s -> após 3s a animação é executada
@@ -88,18 +91,40 @@ que nossa página da web é */
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+
+    animation:moveInRigth 1s ease-out;
 }
 
-/* animações */
+/* animações 
+  algo interessante é adicionar a animação em element:hover
+*/
 @keyframes moveInLeft { 
     /* inicio */
+    /* transform: rotate(180deg) -> efeita de rodar */
     0% {
         opacity: 0;
         transform: translateX(-100px);
     }
-
+    
     80% {
         transform: translateX(10px);
+    }
+    /* final */
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRigth { 
+    /* inicio */
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
     }
 
     /* final */
@@ -108,3 +133,4 @@ que nossa página da web é */
         transform: translateX(0);
     }
 }
+
