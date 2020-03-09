@@ -1,0 +1,26 @@
+Os três pilares da programação web: 
+    -   Responsividade;
+    -   Escalonamento do código;
+    -   Performance;
+
+Ordem de precedencia de regras CSS conflitantes:
+    0 - !important;
+    1 - Inline CSS;
+    2 - IDs;
+    3 - Classes, pseudo-classes, attributos;
+    4 - Elementos, pseudo-elementos;
+E para resolver os conflitos, se conta o numero dos itens acima em cada seletor CSS;
+Ex.:
+    +--------+----+---------+-----------+
+    | INLINE | ID | CLASSES | ELEMENTOS |
+    +--------+----+---------+-----------+
+1   |    0   |  1 |     2   |     1     |
+    +--------+----+---------+-----------+
+2   |    0   |  1 |     1   |     7     |
+    +--------+----+---------+-----------+
+3   |    0   |  0 |     3   |     2     |
+    +--------+----+---------+-----------+
+4   |    0   |  0 |     0   |     1     |
+    +--------+----+---------+-----------+
+Vai contando quem tem mais valores da direita para esquerda, no exemplo 3 vai ter precendencia, pois ele tem o maior numero de classes;
+Caso de empate na especifidade do seletor, o último que foi declarado no código que vai ser usado.
